@@ -20,11 +20,11 @@
         <TextBox x:Name="LastName" Height="47" Margin="20,512,20,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="32" Foreground="#FFB00BEE" Background="{x:Null}" BorderBrush="#FF771177" SelectionBrush="#FF771177" BorderThickness="3,3,3,3"/>
         <TextBox x:Name="Email" Height="47" Margin="20,605,20,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="32" Foreground="#FFB00BEE" Background="{x:Null}" BorderBrush="#FF771177" SelectionBrush="#FF771177" BorderThickness="3,3,3,3"/>
         <TextBox x:Name="Instagram" Height="47" Margin="20,699,20,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="32" Foreground="#FFB00BEE" Background="{x:Null}" BorderBrush="#FF771177" SelectionBrush="#FF771177" BorderThickness="3,3,3,3"/>
-        <TextBox x:Name="Password" Height="47" Margin="20,793,20,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="32" Foreground="#FFB00BEE" Background="{x:Null}" BorderBrush="#FF771177" SelectionBrush="#FF771177" BorderThickness="3,3,3,3"/>
-        <TextBox x:Name="RepeatPassword" Height="47" Margin="20,887,20,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="32" Foreground="#FFB00BEE" Background="{x:Null}" BorderBrush="#FF771177" SelectionBrush="#FF771177" BorderThickness="3,3,3,3"/>
+        <PasswordBox x:Name="Password" Height="47" Margin="20,793,20,0" VerticalAlignment="Top" FontSize="32" Foreground="#FFB00BEE" Background="{x:Null}" BorderBrush="#FF771177" SelectionBrush="#FF771177" BorderThickness="3,3,3,3"/>
+        <PasswordBox x:Name="RepeatPassword" Height="47" Margin="20,887,20,0" VerticalAlignment="Top" FontSize="32" Foreground="#FFB00BEE" Background="{x:Null}" BorderBrush="#FF771177" SelectionBrush="#FF771177" BorderThickness="3,3,3,3"/>
         <Label Content="TopDater" HorizontalAlignment="Center" Height="110" Margin="0,30,0,0" VerticalAlignment="Top" Width="350" Foreground="#FFB00BEE" FontSize="76" FontFamily="SWGothg" RenderTransformOrigin="0.496,0.434"/>
         <Button x:Name="SignUp_Button" Content="Sign Up" HorizontalAlignment="Center" Height="50" Margin="0,961,0,0" VerticalAlignment="Top" Width="310" BorderBrush="#FFB00BEE" Background="#FF771177" BorderThickness="3,3,3,3" Foreground="#FFFF00CC" FontSize="32" FontFamily="Source Code Pro Black" Click="SignUp_Button_Click"/>
-        <Button x:Name="LogIn_Button" Content="Already have an account? Log In" HorizontalAlignment="Center" Height="34" Margin="0,1029,0,0" VerticalAlignment="Top" Width="310" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FFFF00CC" FontFamily="Source Code Pro Black" FontSize="16" Click="SignUp_Button_Copy_Click"/>
+        <Button x:Name="LogIn_Button" Content="Already have an account? Log In" HorizontalAlignment="Center" Height="34" Margin="0,1029,0,0" VerticalAlignment="Top" Width="310" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FFFF00CC" FontFamily="Source Code Pro Black" FontSize="16" Click="LogIn_Button_Click"/>
 
     </Grid>
 </Window>

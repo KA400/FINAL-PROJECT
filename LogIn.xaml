@@ -1,0 +1,23 @@
+﻿<Window x:Class="FINAL_PROJECT.LogIn"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FINAL_PROJECT"
+        mc:Ignorable="d"
+          Title="SignUp" Height="1100" Width="350" Background="#FF101010">
+    <Grid>
+        <Label Content="Log In" HorizontalAlignment="Center" Height="110" Margin="0,165,0,0" VerticalAlignment="Top" Width="270" Foreground="#FFB00BEE" FontSize="72" FontFamily="Source Code Pro Black" RenderTransformOrigin="0.496,0.434"/>
+        <Label Content="Email:" HorizontalAlignment="Left" Height="47" Margin="20,632,0,0" VerticalAlignment="Top" Width="122" Foreground="#FFB00BEE" FontSize="32" FontFamily="Source Code Pro Black"/>
+        <Label Content="Password:" HorizontalAlignment="Left" Height="47" Margin="16,764,0,0" VerticalAlignment="Top" Width="200" Foreground="#FFB00BEE" FontSize="32" FontFamily="Source Code Pro Black"/>
+        <Ellipse HorizontalAlignment="Center" Height="303" Margin="0,290,0,0" Stroke="#FFCC00CC" VerticalAlignment="Top" Width="302" Fill="#FF771177" StrokeThickness="4"/>
+        <Image Margin="12,309,36,0" Stretch="Fill" Source="Logo.png" Height="302" VerticalAlignment="Top"/>
+        <TextBox x:Name="Email" Height="47" Margin="20,678,20,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="32" Foreground="#FFB00BEE" Background="{x:Null}" BorderBrush="#FF771177" SelectionBrush="#FF771177" BorderThickness="3,3,3,3"/>
+        <PasswordBox x:Name="Password" Height="47" Margin="16,811,24,0" VerticalAlignment="Top" FontSize="32" Foreground="#FFB00BEE" Background="{x:Null}" BorderBrush="#FF771177" SelectionBrush="#FF771177" BorderThickness="3,3,3,3"/>
+        <Label Content="TopDater" HorizontalAlignment="Center" Height="110" Margin="0,30,0,0" VerticalAlignment="Top" Width="350" Foreground="#FFB00BEE" FontSize="76" FontFamily="SWGothg" RenderTransformOrigin="0.496,0.434"/>
+        <Button x:Name="LogIn_Button" Content="Log In" HorizontalAlignment="Center" Height="50" Margin="0,909,0,0" VerticalAlignment="Top" Width="310" BorderBrush="#FFB00BEE" Background="#FF771177" BorderThickness="3,3,3,3" Foreground="#FFFF00CC" FontSize="32" FontFamily="Source Code Pro Black" Click="LogIn_Button_Click"/>
+        <Button x:Name="SignUp_Button" Content="Don't have an account? Sign Up" HorizontalAlignment="Center" Height="34" Margin="0,987,0,0" VerticalAlignment="Top" Width="310" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FFFF00CC" FontFamily="Source Code Pro Black" FontSize="16" Click="SignUp_Button_Click"/>
+        <Label Content="Made by: Martin Lozanov 12/4:" HorizontalAlignment="Center" Height="32" Margin="0,1042,0,0" VerticalAlignment="Top" Width="348" Foreground="#FFB00BEE" FontSize="20" FontFamily="Source Code Pro Black" RenderTransformOrigin="0.508,-0.311"/>
+
+    </Grid>
+</Window>

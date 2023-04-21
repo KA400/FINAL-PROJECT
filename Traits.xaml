@@ -1,0 +1,28 @@
+﻿<Window x:Class="FINAL_PROJECT.Traits"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FINAL_PROJECT"
+        mc:Ignorable="d"
+        Title="Traits" Height="1100" Width="350" Background="#FF101010">
+    <Grid>
+        <Label Content="Questions" HorizontalAlignment="Left" Height="110" Margin="5,135,0,0" VerticalAlignment="Top" Width="350" Foreground="#FFB00BEE" FontSize="62" FontFamily="Source Code Pro Black" RenderTransformOrigin="0.496,0.434"/>
+        <Label Content="Gender:" HorizontalAlignment="Left" Height="47" Margin="20,398,0,0" VerticalAlignment="Top" Width="142" Foreground="#FFB00BEE" FontSize="32" FontFamily="Source Code Pro Black"/>
+        <Label Content="Weight:" HorizontalAlignment="Left" Height="54" Margin="20,468,0,0" VerticalAlignment="Top" Width="142" Foreground="#FFB00BEE" FontSize="32" FontFamily="Source Code Pro Black"/>
+        <Label Content="Height:" HorizontalAlignment="Left" Height="52" Margin="20,576,0,0" VerticalAlignment="Top" Width="142" Foreground="#FFB00BEE" FontSize="32" FontFamily="Source Code Pro Black"/>
+        <Label Content="Hair Color:" HorizontalAlignment="Left" Height="47" Margin="20,696,0,0" VerticalAlignment="Top" Width="217" Foreground="#FFB00BEE" FontSize="32" FontFamily="Source Code Pro Black"/>
+        <Label Content="Eye Color:" HorizontalAlignment="Left" Height="47" Margin="20,782,0,0" VerticalAlignment="Top" Width="199" Foreground="#FFB00BEE" FontSize="32" FontFamily="Source Code Pro Black"/>
+        <Label Content="Body Type:" HorizontalAlignment="Left" Height="47" Margin="20,871,0,0" VerticalAlignment="Top" Width="199" Foreground="#FFB00BEE" FontSize="32" FontFamily="Source Code Pro Black"/>
+        <Ellipse HorizontalAlignment="Center" Height="140" Margin="0,230,0,0" Stroke="#FFCC00CC" VerticalAlignment="Top" Width="140" Fill="#FF771177" StrokeThickness="4"/>
+        <Image Margin="104,242,113,0" Stretch="Fill" Source="Logo.png" Height="133" VerticalAlignment="Top"/>
+        <Label Content="TopDater" HorizontalAlignment="Center" Height="110" Margin="0,30,0,0" VerticalAlignment="Top" Width="350" Foreground="#FFB00BEE" FontSize="76" FontFamily="SWGothg" RenderTransformOrigin="0.496,0.434"/>
+        <Button x:Name="SignUp_Button" Content="Sign Up" HorizontalAlignment="Center" Height="50" Margin="0,961,0,0" VerticalAlignment="Top" Width="310" BorderBrush="#FFB00BEE" Background="#FF771177" BorderThickness="3,3,3,3" Foreground="#FFFF00CC" FontSize="32" FontFamily="Source Code Pro Black" Click="SignUp_Button_Click"/>
+        <Button x:Name="LogIn_Button" Content="Already have an account? Log In" HorizontalAlignment="Center" Height="34" Margin="0,1029,0,0" VerticalAlignment="Top" Width="310" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FFFF00CC" FontFamily="Source Code Pro Black" FontSize="16" Click="LogIn_Button_Click"/>
+        <ComboBox x:Name="Gender" HorizontalAlignment="Left" Height="37" Margin="175,408,0,0" VerticalAlignment="Top" Width="139" Foreground="#FFB00BEE" BorderBrush="#FF771177" Background="{x:Null}" SelectedIndex="0" FontFamily="Source Code Pro Black" FontSize="28" >
+            <ComboBoxItem Content="Male" FontFamily="Source Code Pro Black" FontSize="20" Foreground="#FFB00BEE"/>
+            <ComboBoxItem Content="Female" FontFamily="Source Code Pro Black" FontSize="20" Foreground="#FFB00BEE"/>
+        </ComboBox>
+
+    </Grid>
+</Window>
