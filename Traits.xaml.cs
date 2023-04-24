@@ -17,9 +17,28 @@ namespace FINAL_PROJECT
     /// </summary>
     public partial class Traits : Window
     {
-        public Traits()
+        public Traits(int profile_ID)
         {
             InitializeComponent();
+        }
+
+        private void Gender_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(Gender.SelectedIndex == Gender.Items.Count - 2)
+            {
+                BodyType.ItemsSource = new List<string> { "Ectomorph", "Endomorph", "Mesomorph" };
+            }
+            else
+            {
+                BodyType.ItemsSource = new List<string> { "Triangle", "Inverted Triangle", "Rectangle", "Hourglass", "Oval" };
+            }
+        }
+
+        private void Submit_Button_Click(object sender, RoutedEventArgs e)
+        {
+            /* Expectations hp = new Expectations(profile_ID);
+            hp.Show();
+            this.Close(); */
         }
     }
 }

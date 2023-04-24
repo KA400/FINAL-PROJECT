@@ -36,7 +36,7 @@ namespace FINAL_PROJECT
 
         private void LogIn_Button_Click(object sender, RoutedEventArgs e)
         {
-            SqlConnection sqlCon = new SqlConnection(@"Data Source=LABSCIFIPC07\LOCALHOST;Initial Catalog=Dropshipping;Integrated Security=True; Trust Server Certificate=true");
+            SqlConnection sqlCon = new SqlConnection(@"Data Source=LABSCIFIPC07\LOCALHOST; Initial Catalog=TopDate; Integrated Security=True;");
 
             try
             {
@@ -51,7 +51,7 @@ namespace FINAL_PROJECT
                 int count = Convert.ToInt32(sqlCmd.ExecuteScalar());
                 if (count == 1)
                 {
-                    int profile_ID = Convert.ToInt32(new SqlCommand("SELECT customer_ID FROM Profiles Where Email='" + Email.Text + "'", sqlCon).ExecuteScalar());
+                    int profile_ID = Convert.ToInt32(new SqlCommand("SELECT ID FROM Profiles Where Email='" + Email.Text + "'", sqlCon).ExecuteScalar());
                     if (Convert.ToInt32(new SqlCommand("SELECT COUNT(1) FROM Traits Where ID='" + profile_ID + "'", sqlCon).ExecuteScalar()) != 1)
                     {
                         Traits hp = new Traits(profile_ID);
@@ -60,15 +60,15 @@ namespace FINAL_PROJECT
                     }
                     else if (Convert.ToInt32(new SqlCommand("SELECT COUNT(1) FROM Expectations Where ID='" + profile_ID + "'", sqlCon).ExecuteScalar()) != 1)
                     {
-                        Expectations hp = new Expectations(profile_ID);
+                        /* Expectations hp = new Expectations(profile_ID);
                         hp.Show();
-                        this.Close();
+                        this.Close(); */
                     }
                     else
                     {
-                        HomePage hp = new HomePage(profile_ID);
+                        /* HomePage hp = new HomePage(profile_ID);
                         hp.Show();
-                        this.Close();
+                        this.Close(); */
                     }
                 }
                 else

@@ -26,7 +26,7 @@ namespace FINAL_PROJECT
             InitializeComponent();
         }
 
-        SqlConnection sqlCon = new SqlConnection(@"Data Source=LABSCIFIPC07\LOCALHOST; Initial Catalog = Dropshipping; Integrated Security = True;Trust Server Certificate=true");
+        SqlConnection sqlCon = new SqlConnection(@"Data Source=LABSCIFIPC07\LOCALHOST; Initial Catalog = TopDate; Integrated Security = True;");
 
         private void SignUp_Button_Click(object sender, RoutedEventArgs e)
         {
@@ -36,7 +36,7 @@ namespace FINAL_PROJECT
                 {
                     sqlCon.Open();
 
-                    string querry = "INSERT INTO Profiles(first_name, last_name, Email, Instagram, Password) values ('" + this.FirstName.Text + "' , '" + this.LastName.Text + "' , '" + this.Email.Text + "' , '" + this.Instagram.Text + "' '" + this.Password.Password + "' )";
+                    string querry = "INSERT INTO Profiles(first_name, last_name, Email, Instagram, Password) values ('" + this.FirstName.Text + "' , '" + this.LastName.Text + "' , '" + this.Email.Text + "' , '" + this.Instagram.Text + "' , '" + this.Password.Password + "' )";
                     SqlCommand cmd = new SqlCommand(querry, sqlCon);
                     cmd.ExecuteNonQuery();
 
