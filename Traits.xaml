@@ -38,7 +38,7 @@
             <ComboBoxItem Content="Hazel" FontFamily="Source Code Pro Black" FontSize="20" Foreground="#FFB00BEE"/>
             <ComboBoxItem Content="Red" FontFamily="Source Code Pro Black" FontSize="20" Foreground="#FFB00BEE"/>
         </ComboBox>
-        <ComboBox x:Name="BodyType" HorizontalAlignment="Left" Height="42" Margin="20,906,0,0" VerticalAlignment="Top" Width="169" Foreground="#FFB00BEE" BorderBrush="#FF771177" Background="{x:Null}" SelectedIndex="0" FontFamily="Source Code Pro Black" FontSize="28" ItemsSource="{Binding MyDataSource}">
+        <ComboBox x:Name="BodyType" HorizontalAlignment="Left" Height="42" Margin="20,906,0,0" VerticalAlignment="Top" Width="169" Foreground="#FFB00BEE" BorderBrush="#FF771177" Background="{x:Null}" SelectedIndex="0" FontFamily="Source Code Pro Black" FontSize="28">
         </ComboBox>
 
     </Grid>

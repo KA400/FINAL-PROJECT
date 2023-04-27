@@ -28,15 +28,19 @@ namespace FINAL_PROJECT
 
         private void Gender_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            string[] bodyType;
             if(Gender.SelectedIndex == Gender.Items.Count - 2)
             {
-                enum bodyType { "Ectomorph", "Endomorph", "Mesomorph" };
+                bodyType = { "Ectomorph", "Endomorph", "Mesomorph" };
             }
             else
             {
-                enum bodyType { "Triangle", "Inverted Triangle", "Rectangle", "Hourglass", "Oval" };
+                bodyType = { "Triangle", "Inverted Triangle", "Rectangle", "Hourglass", "Oval" };
             }
-            BodyType.DataSource = Enum.GetValues(typeof(bodyType));
+            foreach (var item in bodyType)
+            {
+                BodyType.Items.Add(item);
+            }
         }
 
         private void Submit_Button_Click(object sender, RoutedEventArgs e)
