@@ -36,7 +36,7 @@ namespace FINAL_PROJECT
 
         private void LogIn_Button_Click(object sender, RoutedEventArgs e)
         {
-            SqlConnection sqlCon = new SqlConnection(@"Data Source=LABSCIFIPC07\LOCALHOST; Initial Catalog=TopDate; Integrated Security=True;");
+            SqlConnection sqlCon = new SqlConnection(@"Data Source=LIDY;Initial Catalog=TopDate;Integrated Security=True;");
 
             try
             {
@@ -54,21 +54,21 @@ namespace FINAL_PROJECT
                     int profile_ID = Convert.ToInt32(new SqlCommand("SELECT ID FROM Profiles Where Email='" + Email.Text + "'", sqlCon).ExecuteScalar());
                     if (Convert.ToInt32(new SqlCommand("SELECT COUNT(1) FROM Traits Where ID='" + profile_ID + "'", sqlCon).ExecuteScalar()) != 1)
                     {
-                        Traits hp = new Traits(profile_ID);
-                        hp.Show();
+                        Traits tr = new Traits(profile_ID);
+                        tr.Show();
                         this.Close();
                     }
                     else if (Convert.ToInt32(new SqlCommand("SELECT COUNT(1) FROM Expectations Where ID='" + profile_ID + "'", sqlCon).ExecuteScalar()) != 1)
                     {
-                        /* Expectations hp = new Expectations(profile_ID);
-                        hp.Show();
-                        this.Close(); */
+                        Expectations ep = new Expectations(profile_ID);
+                        ep.Show();
+                        this.Close();
                     }
                     else
                     {
-                        /* HomePage hp = new HomePage(profile_ID);
-                        hp.Show();
-                        this.Close(); */
+                        Matches m = new Matches(profile_ID);
+                        m.Show();
+                        this.Close();
                     }
                 }
                 else

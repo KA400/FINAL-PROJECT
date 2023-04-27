@@ -26,7 +26,7 @@ namespace FINAL_PROJECT
             InitializeComponent();
         }
 
-        SqlConnection sqlCon = new SqlConnection(@"Data Source=LABSCIFIPC07\LOCALHOST; Initial Catalog = TopDate; Integrated Security = True;");
+        SqlConnection sqlCon = new SqlConnection(@"Data Source=LIDY;Initial Catalog=TopDate;Integrated Security=True;");
 
         private void SignUp_Button_Click(object sender, RoutedEventArgs e)
         {

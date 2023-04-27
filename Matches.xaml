@@ -1,0 +1,42 @@
+﻿<Window x:Class="FINAL_PROJECT.Matches"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FINAL_PROJECT"
+        mc:Ignorable="d"
+        Title="Matches" Height="1100" Width="350" Background="#FF101010">
+    <ScrollViewer>
+        <Grid>
+            <DataGrid x:Name="MyDataGrid" ItemsSource="{Binding MyDataTable}" AutoGenerateColumns="False" Margin="4,476,4,323" FontSize="30" FontFamily="Source Code Pro Black" Foreground="#FFB00BEE">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="BodyType" Binding="{Binding BodyType}" />
+                    <DataGridTextColumn Header="EyeColor" Binding="{Binding EyeColor}" />
+                    <DataGridTextColumn Header="HairColor" Binding="{Binding HairColor}" />
+                    <DataGridTextColumn Header="Height" Binding="{Binding Height}" />
+                    <DataGridTextColumn Header="Weight" Binding="{Binding Weight}" />
+                    <DataGridTextColumn Header="Gender" Binding="{Binding Gender}" />
+                </DataGrid.Columns>
+                <DataGrid.LayoutTransform>
+                    <RotateTransform Angle="-90" />
+                </DataGrid.LayoutTransform>
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                        <Setter Property="LayoutTransform">
+                            <Setter.Value>
+                                <RotateTransform Angle="90" />
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </DataGrid.ColumnHeaderStyle>
+            </DataGrid>
+            <Label Content="Matches" HorizontalAlignment="Center" Height="82" Margin="0,145,0,0" VerticalAlignment="Top" Width="218" Foreground="#FFB00BEE" FontSize="56" FontFamily="Source Code Pro Black" RenderTransformOrigin="0.496,0.434"/>
+            <Ellipse HorizontalAlignment="Center" Height="140" Margin="0,230,0,0" Stroke="#FFCC00CC" VerticalAlignment="Top" Width="140" Fill="#FF771177" StrokeThickness="4"/>
+            <Image Margin="100,242,0,0" Stretch="Fill" Source="Logo.png" Height="133" Width="133" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <Label Content="TopDater" HorizontalAlignment="Center" Height="110" Margin="0,30,0,0" VerticalAlignment="Top" Width="312" Foreground="#FFB00BEE" FontSize="76" FontFamily="SWGothg" RenderTransformOrigin="0.496,0.434"/>
+            <Button x:Name="Match_Button" Content="Match" HorizontalAlignment="Center" Height="50" Margin="0,948,0,0" VerticalAlignment="Top" Width="310" BorderBrush="#FFB00BEE" Background="#FF771177" BorderThickness="3,3,3,3" Foreground="#FFFF00CC" FontSize="32" FontFamily="Source Code Pro Black" Click="Match_Button_Click"/>
+            <Button x:Name="Next_Button" Content="Next" HorizontalAlignment="Center" Height="50" Margin="0,1010,0,0" VerticalAlignment="Top" Width="310" BorderBrush="#FFB00BEE" Background="#FF771177" BorderThickness="3,3,3,3" Foreground="#FFFF00CC" FontSize="32" FontFamily="Source Code Pro Black" Click="Next_Button_Click"/>
+
+        </Grid>
+    </ScrollViewer>
+</Window>

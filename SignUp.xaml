@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:FINAL_PROJECT"
         mc:Ignorable="d"
           Title="SignUp" Height="1100" Width="350" Background="#FF101010">
+    <ScrollViewer>
     <Grid>
         <Label Content="Sign Up" HorizontalAlignment="Center" Height="110" Margin="0,130,0,0" VerticalAlignment="Top" Width="310" Foreground="#FFB00BEE" FontSize="72" FontFamily="Source Code Pro Black" RenderTransformOrigin="0.496,0.434"/>
         <Label Content="First Name:" HorizontalAlignment="Left" Height="47" Margin="20,370,0,0" VerticalAlignment="Top" Width="218" Foreground="#FFB00BEE" FontSize="32" FontFamily="Source Code Pro Black"/>
@@ -18,13 +19,14 @@
         <Image Margin="97,242,0,0" Stretch="Fill" Source="Logo.png" Height="133" Width="133" VerticalAlignment="Top" HorizontalAlignment="Left"/>
         <TextBox x:Name="FirstName" Height="47" Margin="20,417,20,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="32" Foreground="#FFB00BEE" Background="{x:Null}" BorderBrush="#FF771177" SelectionBrush="#FF771177" BorderThickness="3,3,3,3"/>
         <TextBox x:Name="LastName" Height="47" Margin="20,512,20,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="32" Foreground="#FFB00BEE" Background="{x:Null}" BorderBrush="#FF771177" SelectionBrush="#FF771177" BorderThickness="3,3,3,3"/>
-        <TextBox x:Name="Email" Height="47" Margin="20,605,20,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="28" Foreground="#FFB00BEE" Background="{x:Null}" BorderBrush="#FF771177" SelectionBrush="#FF771177" BorderThickness="3,3,3,3"/>
+        <TextBox x:Name="Email" Height="47" Margin="20,605,20,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="22" Foreground="#FFB00BEE" Background="{x:Null}" BorderBrush="#FF771177" SelectionBrush="#FF771177" BorderThickness="3,3,3,3"/>
         <TextBox x:Name="Instagram" Height="47" Margin="20,699,20,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="32" Foreground="#FFB00BEE" Background="{x:Null}" BorderBrush="#FF771177" SelectionBrush="#FF771177" BorderThickness="3,3,3,3"/>
         <PasswordBox x:Name="Password" Height="47" Margin="20,793,20,0" VerticalAlignment="Top" FontSize="32" Foreground="#FFB00BEE" Background="{x:Null}" BorderBrush="#FF771177" SelectionBrush="#FF771177" BorderThickness="3,3,3,3"/>
         <PasswordBox x:Name="RepeatPassword" Height="47" Margin="20,887,20,0" VerticalAlignment="Top" FontSize="32" Foreground="#FFB00BEE" Background="{x:Null}" BorderBrush="#FF771177" SelectionBrush="#FF771177" BorderThickness="3,3,3,3"/>
-        <Label Content="TopDater" HorizontalAlignment="Center" Height="110" Margin="0,30,0,0" VerticalAlignment="Top" Width="350" Foreground="#FFB00BEE" FontSize="76" FontFamily="SWGothg" RenderTransformOrigin="0.496,0.434"/>
+        <Label Content="TopDater" HorizontalAlignment="Center" Height="110" Margin="0,30,0,0" VerticalAlignment="Top" Width="312" Foreground="#FFB00BEE" FontSize="76" FontFamily="SWGothg" RenderTransformOrigin="0.496,0.434"/>
         <Button x:Name="SignUp_Button" Content="Sign Up" HorizontalAlignment="Center" Height="50" Margin="0,961,0,0" VerticalAlignment="Top" Width="310" BorderBrush="#FFB00BEE" Background="#FF771177" BorderThickness="3,3,3,3" Foreground="#FFFF00CC" FontSize="32" FontFamily="Source Code Pro Black" Click="SignUp_Button_Click"/>
         <Button x:Name="LogIn_Button" Content="Already have an account? Log In" HorizontalAlignment="Center" Height="34" Margin="0,1029,0,0" VerticalAlignment="Top" Width="310" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FFFF00CC" FontFamily="Source Code Pro Black" FontSize="16" Click="LogIn_Button_Click"/>
 
     </Grid>
+    </ScrollViewer>
 </Window>

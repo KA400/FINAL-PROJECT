@@ -14,12 +14,12 @@ using System.Windows.Shapes;
 namespace FINAL_PROJECT
 {
     /// <summary>
-    /// Interaction logic for Traits.xaml
+    /// Interaction logic for Expectations.xaml
     /// </summary>
-    public partial class Traits : Window
+    public partial class Expectations : Window
     {
         int ID;
-        public Traits(int profile_ID)
+        public Expectations(int profile_ID)
         {
             InitializeComponent();
             ID = profile_ID;
@@ -64,11 +64,11 @@ namespace FINAL_PROJECT
             {
                 sqlCon.Open();
 
-                string querry = "INSERT INTO Traits(ID, Gender, Weight, Height, EyeColor, HairColor, BodyType) values ('" + ID + "' , '" + this.Gender.SelectedValue + "' , '" + this.WeightSlider.Value + "' , '" + this.HeightSlider.Value + "' , '" + this.EyeColor.SelectedValue + "' , '" + this.HairColor.SelectedValue + "' , '" + this.BodyType.SelectedValue + "')";
+                string querry = "INSERT INTO Expectations(ID, Gender, Weight_top, Weight_bottom, Height_top, Height_bottom, EyeColor1, EyeColor2, EyeColor3, EyeColor4, EyeColor5, EyeColor6, EyeColor7, HairColor1, HairColor2, HairColor3, HairColor4, HairColor5, BodyType) values ('" + ID + "' , '" + this.Gender.SelectedValue + "' , '" + this.WeightSliderMax.Value + "' , '" + this.WeightSliderMin.Value + "' , '" + this.HeightSliderMax.Value + "' , '" + this.HeightSliderMin.Value + "' , '" + Convert.ToByte(this.EyeColor1.IsChecked) + "' , '" + Convert.ToByte(this.EyeColor2.IsChecked) + "' , '" + Convert.ToByte(this.EyeColor3.IsChecked) + "' , '" + Convert.ToByte(this.EyeColor4.IsChecked) + "' , '" + Convert.ToByte(this.EyeColor5.IsChecked) + "' , '" + Convert.ToByte(this.EyeColor6.IsChecked) + "' , '" + Convert.ToByte(this.EyeColor7.IsChecked) + "' , '" + Convert.ToByte(this.HairColor1.IsChecked) + "' , '" + Convert.ToByte(this.HairColor2.IsChecked) + "' , '" + Convert.ToByte(this.HairColor3.IsChecked) + "' , '" + Convert.ToByte(this.HairColor4.IsChecked) + "' , '" + Convert.ToByte(this.HairColor5.IsChecked) + "' , '" + this.BodyType.SelectedValue + "')";
                 SqlCommand cmd = new SqlCommand(querry, sqlCon);
                 cmd.ExecuteNonQuery();
 
-                MessageBox.Show("Successfully Updated Traits!");
+                MessageBox.Show("Successfully Updated Expectations!");
             }
 
             catch (Exception ex)
@@ -80,8 +80,8 @@ namespace FINAL_PROJECT
                 sqlCon.Close();
             }
 
-            Expectations ep = new Expectations(ID);
-            ep.Show();
+            Matches m = new Matches(ID);
+            m.Show();
             this.Close();
         }
     }
