@@ -9,6 +9,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Forms;
+using System.Threading.Tasks;
+using SYstem.ComponentModel;
+using System.Text;
 
 namespace FINAL_PROJECT
 {
@@ -26,12 +30,13 @@ namespace FINAL_PROJECT
         {
             if(Gender.SelectedIndex == Gender.Items.Count - 2)
             {
-                BodyType.ItemsSource = new List<string> { "Ectomorph", "Endomorph", "Mesomorph" };
+                enum bodyType { "Ectomorph", "Endomorph", "Mesomorph" };
             }
             else
             {
-                BodyType.ItemsSource = new List<string> { "Triangle", "Inverted Triangle", "Rectangle", "Hourglass", "Oval" };
+                enum bodyType { "Triangle", "Inverted Triangle", "Rectangle", "Hourglass", "Oval" };
             }
+            BodyType.DataSource = Enum.GetValues(typeof(bodyType));
         }
 
         private void Submit_Button_Click(object sender, RoutedEventArgs e)
