@@ -72,7 +72,7 @@ namespace FINAL_PROJECT
                     SqlCommand cmd = new SqlCommand(querry, sqlCon);
                     cmd.ExecuteNonQuery();
 
-                    MessageBox.Show("Successfully updated information up!");
+                    MessageBox.Show("Successfully updated information!");
                 }
 
                 catch (Exception ex)

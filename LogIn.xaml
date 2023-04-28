@@ -18,7 +18,7 @@
             <Label Content="TopDate" HorizontalAlignment="Center" Height="110" Margin="0,30,0,0" VerticalAlignment="Top" Width="312" Foreground="#FFB00BEE" FontSize="66" FontFamily="Broadway" RenderTransformOrigin="0.496,0.434"/>
             <Button x:Name="LogIn_Button" Content="Log In" HorizontalAlignment="Center" Height="50" Margin="0,909,0,0" VerticalAlignment="Top" Width="310" BorderBrush="#FFB00BEE" Background="#FF771177" BorderThickness="3,3,3,3" Foreground="#FFFF00CC" FontSize="32" FontFamily="Source Code Pro Black" Click="LogIn_Button_Click"/>
             <Button x:Name="SignUp_Button" Content="Don't have an account? Sign Up" HorizontalAlignment="Center" Height="34" Margin="0,987,0,0" VerticalAlignment="Top" Width="310" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FFFF00CC" FontFamily="Source Code Pro Black" FontSize="16" Click="SignUp_Button_Click"/>
-            <Label Content="Made by: Martin Lozanov 12/4:" HorizontalAlignment="Center" Height="32" Margin="0,1042,0,0" VerticalAlignment="Top" Width="348" Foreground="#FFB00BEE" FontSize="20" FontFamily="Source Code Pro Black" RenderTransformOrigin="0.508,-0.311"/>
+            <Label Content="Made by: Martin Lozanov 12/4:" HorizontalAlignment="Left" Height="32" Margin="-4,1042,0,0" VerticalAlignment="Top" Width="348" Foreground="#FFB00BEE" FontSize="20" FontFamily="Source Code Pro Black" RenderTransformOrigin="0.508,-0.311"/>
 
         </Grid>
     </ScrollViewer>

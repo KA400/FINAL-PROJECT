@@ -145,7 +145,7 @@ namespace FINAL_PROJECT
                 }
                 else if (match == 1)
                 {
-                    string query5 = "Update Matches SET [match] = 1 WHERE profile1 = " + profile1 + " and profile2 = " + ID + "";
+                    string query5 = "Update Matches SET [match] = 0 WHERE profile1 = " + profile1 + " and profile2 = " + ID + "";
                     SqlCommand cmd5 = new SqlCommand(query5, sqlCon);
                     cmd5.ExecuteNonQuery();
                     MessageBox.Show("Generating New Match!");
