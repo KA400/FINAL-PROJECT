@@ -42,7 +42,7 @@ namespace FINAL_PROJECT
 
                 if(profile1 != null)
                 {
-                    string query3 = "SELECT * FROM Traits WHERE ID = '" + profile1 + "'";
+                    string query3 = "SELECT Gender, Weight, Height, HairColor, EyeColor, BodyType FROM Traits WHERE ID = '" + profile1 + "'";
                     SqlCommand cmd3 = new SqlCommand(query3, sqlCon);
                     
                     SqlDataAdapter da = new SqlDataAdapter(cmd3);
@@ -59,7 +59,7 @@ namespace FINAL_PROJECT
                     profile1 = Convert.ToString(cmd2.ExecuteScalar());
 
 
-                    string query4 = "SELECT * FROM Traits WHERE ID = '" + profile1 + "'";
+                    string query4 = "SELECT Gender, Weight, Height, HairColor, EyeColor, BodyType FROM Traits WHERE ID = '" + profile1 + "'";
                     SqlCommand cmd4 = new SqlCommand(query4, sqlCon);
 
                     SqlDataAdapter da = new SqlDataAdapter(cmd4);
