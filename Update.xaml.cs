@@ -22,15 +22,16 @@ namespace FINAL_PROJECT
     public partial class Update : Window
     {
         SqlConnection sqlCon = new SqlConnection(@"Data Source=LIDY;Initial Catalog=TopDate;Integrated Security=True;");
-
-        public Update()
+        int ID;
+        public Update(int profile_ID)
         {
             InitializeComponent();
+            ID = profile_ID;
             try
             {
                 sqlCon.Open();
 
-                string query = " select * from Profiles where customer_ID = " + ID;
+                string query = " select * from Profiles where ID = " + ID;
 
                 SqlCommand cmd = new SqlCommand(query, sqlCon);
 
@@ -67,7 +68,7 @@ namespace FINAL_PROJECT
                 {
                     sqlCon.Open();
 
-                    string querry = "UPDATE Profiles SET first_name = '" + this.FirstName.Text + "' , last_name = '" + this.LastName.Text + "' , Email + '" + this.Email.Text + "' , Instagram = '" + this.Instagram.Text + "' , Password = '" + this.Password.Password + "'";
+                    string querry = "UPDATE Profiles SET first_name = '" + this.FirstName.Text + "' , last_name = '" + this.LastName.Text + "' , Email = '" + this.Email.Text + "' , Instagram = '" + this.Instagram.Text + "' , Password = '" + this.Password.Text + "'";
                     SqlCommand cmd = new SqlCommand(querry, sqlCon);
                     cmd.ExecuteNonQuery();
 
@@ -83,7 +84,7 @@ namespace FINAL_PROJECT
                     sqlCon.Close();
                 }
 
-                Matches m = new Matches();
+                Matches m = new Matches(ID);
                 m.Show();
                 this.Close();
             }
@@ -101,7 +102,7 @@ namespace FINAL_PROJECT
                 MessageBox.Show(ex.Message);
             }
 
-            if (Email.Text.Equals("") || Email.Text.Contains("@") == false || Convert.ToInt32(new SqlCommand("SELECT Count(1) FROM Profiles Where Email='" + Email.Text + "'", sqlCon).ExecuteScalar()) == 1)
+            if (Email.Text.Equals("") || Email.Text.Contains("@") == false)
             {
                 MessageBox.Show("Invalid email");
                 sqlCon.Close();
@@ -125,15 +126,9 @@ namespace FINAL_PROJECT
                 sqlCon.Close();
                 return false;
             }
-            else if (Password.Password.Length < 10)
+            else if (Password.Text.Length < 10)
             {
                 MessageBox.Show("Your password should be at least 10 symbols long. Try again");
-                sqlCon.Close();
-                return false;
-            }
-            else if (Password.Password != RepeatPassword.Password)
-            {
-                MessageBox.Show("Your passwords do not match!");
                 sqlCon.Close();
                 return false;
             }

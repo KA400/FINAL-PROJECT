@@ -37,7 +37,7 @@
             <Button x:Name="Match_Button" Content="Match" HorizontalAlignment="Center" Height="50" Margin="0,948,0,0" VerticalAlignment="Top" Width="310" BorderBrush="#FFB00BEE" Background="#FF771177" BorderThickness="3,3,3,3" Foreground="#FFFF00CC" FontSize="32" FontFamily="Source Code Pro Black" Click="Match_Button_Click"/>
             <Button x:Name="Next_Button" Content="Next" HorizontalAlignment="Center" Height="50" Margin="0,1010,0,0" VerticalAlignment="Top" Width="310" BorderBrush="#FFB00BEE" Background="#FF771177" BorderThickness="3,3,3,3" Foreground="#FFFF00CC" FontSize="32" FontFamily="Source Code Pro Black" Click="Next_Button_Click"/>
             <Button x:Name="Logout_Button" Content="Logout" HorizontalAlignment="Left" Height="50" Margin="12,401,0,0" VerticalAlignment="Top" Width="106" BorderBrush="#FFB00BEE" Background="#FF771177" BorderThickness="3,3,3,3" Foreground="#FFFF00CC" FontSize="32" FontFamily="Source Code Pro Black" Click="Logout_Button_Click"/>
-            <Button x:Name="Match_Button_Copy1" Content="Edit Profile" HorizontalAlignment="Left" Height="50" Margin="148,401,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#FFB00BEE" Background="#FF771177" BorderThickness="3,3,3,3" Foreground="#FFFF00CC" FontSize="32" FontFamily="Source Code Pro Black" Click="Match_Button_Click"/>
+            <Button x:Name="Edit_Button" Content="Edit Profile" HorizontalAlignment="Left" Height="50" Margin="148,401,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#FFB00BEE" Background="#FF771177" BorderThickness="3,3,3,3" Foreground="#FFFF00CC" FontSize="32" FontFamily="Source Code Pro Black" Click="Edit_Button_Click"/>
 
         </Grid>
     </ScrollViewer>

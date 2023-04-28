@@ -14,17 +14,15 @@
         <Label Content="Email:" HorizontalAlignment="Left" Height="47" Margin="20,559,0,0" VerticalAlignment="Top" Width="122" Foreground="#FFB00BEE" FontSize="32" FontFamily="Source Code Pro Black"/>
         <Label Content="Instagram:" HorizontalAlignment="Left" Height="47" Margin="20,653,0,0" VerticalAlignment="Top" Width="199" Foreground="#FFB00BEE" FontSize="32" FontFamily="Source Code Pro Black"/>
         <Label Content="Password:" HorizontalAlignment="Left" Height="47" Margin="20,746,0,0" VerticalAlignment="Top" Width="199" Foreground="#FFB00BEE" FontSize="32" FontFamily="Source Code Pro Black"/>
-        <Label Content="Repeat Password:" HorizontalAlignment="Left" Height="47" Margin="20,840,0,0" VerticalAlignment="Top" Width="320" Foreground="#FFB00BEE" FontSize="32" FontFamily="Source Code Pro Black"/>
-        <Ellipse HorizontalAlignment="Center" Height="140" Margin="0,230,0,0" Stroke="#FFCC00CC" VerticalAlignment="Top" Width="140" Fill="#FF771177" StrokeThickness="4"/>
+            <Ellipse HorizontalAlignment="Center" Height="140" Margin="0,230,0,0" Stroke="#FFCC00CC" VerticalAlignment="Top" Width="140" Fill="#FF771177" StrokeThickness="4"/>
         <Image Margin="97,242,0,0" Stretch="Fill" Source="Logo.png" Height="133" Width="133" VerticalAlignment="Top" HorizontalAlignment="Left"/>
         <TextBox x:Name="FirstName" Height="47" Margin="20,417,20,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="32" Foreground="#FFB00BEE" Background="{x:Null}" BorderBrush="#FF771177" SelectionBrush="#FF771177" BorderThickness="3,3,3,3"/>
         <TextBox x:Name="LastName" Height="47" Margin="20,512,20,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="32" Foreground="#FFB00BEE" Background="{x:Null}" BorderBrush="#FF771177" SelectionBrush="#FF771177" BorderThickness="3,3,3,3"/>
         <TextBox x:Name="Email" Height="47" Margin="20,605,20,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="22" Foreground="#FFB00BEE" Background="{x:Null}" BorderBrush="#FF771177" SelectionBrush="#FF771177" BorderThickness="3,3,3,3"/>
         <TextBox x:Name="Instagram" Height="47" Margin="20,699,20,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="32" Foreground="#FFB00BEE" Background="{x:Null}" BorderBrush="#FF771177" SelectionBrush="#FF771177" BorderThickness="3,3,3,3"/>
-        <PasswordBox x:Name="Password" Height="47" Margin="20,793,20,0" VerticalAlignment="Top" FontSize="32" Foreground="#FFB00BEE" Background="{x:Null}" BorderBrush="#FF771177" SelectionBrush="#FF771177" BorderThickness="3,3,3,3"/>
-        <PasswordBox x:Name="RepeatPassword" Height="47" Margin="20,887,20,0" VerticalAlignment="Top" FontSize="32" Foreground="#FFB00BEE" Background="{x:Null}" BorderBrush="#FF771177" SelectionBrush="#FF771177" BorderThickness="3,3,3,3"/>
-        <Label Content="TopDate" HorizontalAlignment="Center" Height="110" Margin="0,30,0,0" VerticalAlignment="Top" Width="312" Foreground="#FFB00BEE" FontSize="66" FontFamily="Broadway" RenderTransformOrigin="0.496,0.434"/>
-        <Button x:Name="Update_Button" Content="Sign Up" HorizontalAlignment="Center" Height="50" Margin="0,961,0,0" VerticalAlignment="Top" Width="310" BorderBrush="#FFB00BEE" Background="#FF771177" BorderThickness="3,3,3,3" Foreground="#FFFF00CC" FontSize="32" FontFamily="Source Code Pro Black" Click="Update_Button_Click"/>
+        <TextBox x:Name="Password" Height="47" Margin="20,793,20,0" VerticalAlignment="Top" FontSize="32" Foreground="#FFB00BEE" Background="{x:Null}" BorderBrush="#FF771177" SelectionBrush="#FF771177" BorderThickness="3,3,3,3"/>
+            <Label Content="TopDate" HorizontalAlignment="Center" Height="110" Margin="0,30,0,0" VerticalAlignment="Top" Width="312" Foreground="#FFB00BEE" FontSize="66" FontFamily="Broadway" RenderTransformOrigin="0.496,0.434"/>
+        <Button x:Name="Update_Button" Content="Update Information" HorizontalAlignment="Center" Height="50" Margin="0,961,0,0" VerticalAlignment="Top" Width="310" BorderBrush="#FFB00BEE" Background="#FF771177" BorderThickness="3,3,3,3" Foreground="#FFFF00CC" FontSize="32" FontFamily="Source Code Pro Black" Click="Update_Button_Click"/>
 
         </Grid>
     </ScrollViewer>

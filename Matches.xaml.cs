@@ -173,5 +173,12 @@ namespace FINAL_PROJECT
             su.Show();
             this.Close();
         }
+
+        private void Edit_Button_Click(object sender, RoutedEventArgs e)
+        {
+            Update u = new Update(ID);
+            u.Show();
+            this.Close();
+        }
     }
 }
