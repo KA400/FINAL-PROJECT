@@ -36,7 +36,7 @@ namespace FINAL_PROJECT
                 
                 DataTable dt = new DataTable();
                 //pending matches
-                string query1 = $"SELECT TOP (1) profile1 FROM Matches WHERE profile2 = '" + ID + "' and match = null";
+                string query1 = $"SELECT TOP (1) profile1 FROM Matches WHERE profile2 = '" + ID + "' and match IS NULL";
                 SqlCommand cmd1 = new SqlCommand(query1, sqlCon);
                 profile1 = Convert.ToString(cmd1.ExecuteScalar());
 
@@ -89,18 +89,18 @@ namespace FINAL_PROJECT
                 sqlCon.Open();
                 if (match == 0)
                 {
-                    string query5 = "INSERT INTO Matches(profile1, profile2) values('" + ID + "', '" + profile1 + "' )";
+                    string query5 = "INSERT INTO Matches(profile1, profile2) values(" + ID + ", " + profile1 + " )";
                     SqlCommand cmd5 = new SqlCommand(query5, sqlCon);
                     cmd5.ExecuteNonQuery();
                     MessageBox.Show("Awaiting Response!");
                 }
                 else if(match == 1)
                 {
-                    string query5 = "UPADTE Matches SET match = 1 WHERE profile1 = '" + profile1 + "' and profile 2 = '" + ID + "'";
+                    string query5 = "Update Matches SET [match] = 1 WHERE profile1 = " + profile1 + " and profile2 = " + ID + "";
                     SqlCommand cmd5 = new SqlCommand(query5, sqlCon);
                     cmd5.ExecuteNonQuery();
 
-                    string query7 = "SELECT Instagram FROM Profiles WHERE ID = '" + profile1 + "'";
+                    string query7 = "SELECT Instagram FROM Profiles WHERE ID = " + profile1 + "";
                     SqlCommand cmd7 = new SqlCommand(query7, sqlCon);
                     MessageBox.Show("Instagram: "+ Convert.ToString(cmd7.ExecuteScalar()));
                 }
@@ -128,14 +128,14 @@ namespace FINAL_PROJECT
                 sqlCon.Open();
                 if (match == 0)
                 {
-                    string query5 = "INSERT INTO Matches(profile1, profile2, match) values('" + ID + "', '" + profile1 + "', 0 )";
+                    string query5 = "INSERT INTO Matches(profile1, profile2, match) values(" + ID + ", " + profile1 + ", 0 )";
                     SqlCommand cmd5 = new SqlCommand(query5, sqlCon);
                     cmd5.ExecuteNonQuery();
                     MessageBox.Show("Generating New Match!");
                 }
                 else if (match == 1)
                 {
-                    string query5 = "UPADTE Matches SET match = 0 WHERE profile1 = '" + profile1 + "' and profile 2 = '" + ID + "'";
+                    string query5 = "Update Matches SET [match] = 1 WHERE profile1 = " + profile1 + " and profile2 = " + ID + "";
                     SqlCommand cmd5 = new SqlCommand(query5, sqlCon);
                     cmd5.ExecuteNonQuery();
                     MessageBox.Show("Generating New Match!");
