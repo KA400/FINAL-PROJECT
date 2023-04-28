@@ -23,9 +23,8 @@ namespace FINAL_PROJECT
         int ID;
         int match = -1;
         string profile1;
-        int random = -1;
 
-        SqlConnection sqlCon = new SqlConnection(@"Data Source=LIDY;Initial Catalog=TopDate;Integrated Security=True;");
+        SqlConnection sqlCon = new SqlConnection(@"Data Source=LAB113PC06\LOCALHOST;Initial Catalog=TopDate;Integrated Security=True;");
         public Matches(int profile_ID)
         {
             InitializeComponent();
@@ -36,14 +35,14 @@ namespace FINAL_PROJECT
                 sqlCon.Open();
                 
                 DataTable dt = new DataTable();
-
+                //pending matches
                 string query1 = "SELECT TOP (1) profile1 FROM Matches WHERE profile2 = '" + ID + "' and match = null";
                 SqlCommand cmd1 = new SqlCommand(query1, sqlCon);
                 profile1 = Convert.ToString(cmd1.ExecuteScalar());
 
                 if(profile1 != null)
                 {
-                    string query3 = "SELECT * FROM Profiles WHERE ID = '" + profile1 + "'";
+                    string query3 = "SELECT * FROM Traits WHERE ID = '" + profile1 + "'";
                     SqlCommand cmd3 = new SqlCommand(query3, sqlCon);
                     
                     SqlDataAdapter da = new SqlDataAdapter(cmd3);
@@ -55,28 +54,12 @@ namespace FINAL_PROJECT
                 }
                 else
                 {
-                    string query2 = "SELECT COUNT(ID) FROM Profiles WHERE ID != '" + ID + "'";
+                    string query2 = "SELECT Traits.ID FROM Traits LEFT JOIN Expectations ON Traits.Gender = Expectations.Gender WHERE Expectations.ID = '" + ID + "' ORDER BY Rand() LIMIT 1";
                     SqlCommand cmd2 = new SqlCommand(query2, sqlCon);
-                    int count = Convert.ToInt32(cmd2.ExecuteScalar());
-
-                    bool checker = false;
-
-                    while(checker == false)
-                    {
-                        Random rand = new Random();
-                        random = rand.Next(1, count + 1);
-
-                        string query6 = "SELECT COUNT(1) FROM Matches WHERE profile2 = '" + ID + "'";
-                        SqlCommand cmd6 = new SqlCommand(query6, sqlCon);
-
-                        if (Convert.ToInt32(cmd6.ExecuteScalar()) == 0)
-                        {
-                            checker = true;
-                        }
-                    }
+                    profile1 = Convert.ToString(cmd2.ExecuteScalar());
 
 
-                    string query4 = "SELECT * FROM Profiles WHERE ID = '" + profile1 + "'";
+                    string query4 = "SELECT * FROM Traits WHERE ID = '" + profile1 + "'";
                     SqlCommand cmd4 = new SqlCommand(query4, sqlCon);
 
                     SqlDataAdapter da = new SqlDataAdapter(cmd4);
@@ -86,9 +69,6 @@ namespace FINAL_PROJECT
 
                     match = 0;
                 }
-
-                
-
             }
 
             catch (Exception ex)
@@ -109,7 +89,7 @@ namespace FINAL_PROJECT
                 sqlCon.Open();
                 if (match == 0)
                 {
-                    string query5 = "INSERT INTO Matches(profile1, profile2) values('" + ID + "', '" + random + "' )";
+                    string query5 = "INSERT INTO Matches(profile1, profile2) values('" + ID + "', '" + profile1 + "' )";
                     SqlCommand cmd5 = new SqlCommand(query5, sqlCon);
                     cmd5.ExecuteNonQuery();
                     MessageBox.Show("Awaiting Response!");
@@ -148,7 +128,7 @@ namespace FINAL_PROJECT
                 sqlCon.Open();
                 if (match == 0)
                 {
-                    string query5 = "INSERT INTO Matches(profile1, profile2, match) values('" + ID + "', '" + random + "', 0 )";
+                    string query5 = "INSERT INTO Matches(profile1, profile2, match) values('" + ID + "', '" + profile1 + "', 0 )";
                     SqlCommand cmd5 = new SqlCommand(query5, sqlCon);
                     cmd5.ExecuteNonQuery();
                     MessageBox.Show("Generating New Match!");
