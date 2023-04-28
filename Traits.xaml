@@ -18,7 +18,7 @@
             <Label Content="Body Type:" HorizontalAlignment="Left" Height="47" Margin="20,854,0,0" VerticalAlignment="Top" Width="199" Foreground="#FFB00BEE" FontSize="32" FontFamily="Source Code Pro Black"/>
             <Ellipse HorizontalAlignment="Center" Height="140" Margin="0,230,0,0" Stroke="#FFCC00CC" VerticalAlignment="Top" Width="140" Fill="#FF771177" StrokeThickness="4"/>
             <Image Margin="100,242,0,0" Stretch="Fill" Source="Logo.png" Height="133" Width="133" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-            <Label Content="TopDater" HorizontalAlignment="Center" Height="110" Margin="0,30,0,0" VerticalAlignment="Top" Width="312" Foreground="#FFB00BEE" FontSize="76" FontFamily="SWGothg" RenderTransformOrigin="0.496,0.434"/>
+            <Label Content="TopDate" HorizontalAlignment="Center" Height="110" Margin="0,30,0,0" VerticalAlignment="Top" Width="312" Foreground="#FFB00BEE" FontSize="66" FontFamily="Broadway" RenderTransformOrigin="0.496,0.434"/>
             <Button x:Name="Submit_Button" Content="Submit" HorizontalAlignment="Center" Height="50" Margin="0,996,0,0" VerticalAlignment="Top" Width="310" BorderBrush="#FFB00BEE" Background="#FF771177" BorderThickness="3,3,3,3" Foreground="#FFFF00CC" FontSize="32" FontFamily="Source Code Pro Black" Click="Submit_Button_Click"/>
             <ComboBox x:Name="BodyType" HorizontalAlignment="Left" Height="42" Margin="20,906,0,0" VerticalAlignment="Top" Width="225" Foreground="#FFB00BEE" BorderBrush="#FF771177" Background="{x:Null}" SelectedIndex="0" FontFamily="Source Code Pro Black" FontSize="28" SelectedValuePath="Content">
             </ComboBox>

@@ -36,7 +36,7 @@ namespace FINAL_PROJECT
 
         private void LogIn_Button_Click(object sender, RoutedEventArgs e)
         {
-            SqlConnection sqlCon = new SqlConnection(@"Data Source=LABSCIFIPC07\LOCALHOST;Initial Catalog=TopDate;Integrated Security=True;");
+            SqlConnection sqlCon = new SqlConnection(@"Data Source=LIDY;Initial Catalog=TopDate;Integrated Security=True;");
 
             try
             {

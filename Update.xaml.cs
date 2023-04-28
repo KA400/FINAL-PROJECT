@@ -17,18 +17,18 @@ using System.Windows.Shapes;
 namespace FINAL_PROJECT
 {
     /// <summary>
-    /// Interaction logic for SignUp.xaml
+    /// Interaction logic for Update.xaml
     /// </summary>
-    public partial class SignUp : Window
+    public partial class Update : Window
     {
-        public SignUp()
+        public Update()
         {
             InitializeComponent();
         }
 
         SqlConnection sqlCon = new SqlConnection(@"Data Source=LIDY;Initial Catalog=TopDate;Integrated Security=True;");
 
-        private void SignUp_Button_Click(object sender, RoutedEventArgs e)
+        private void Update_Button_Click(object sender, RoutedEventArgs e)
         {
             if (Authentication() == true)
             {

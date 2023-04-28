@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -24,7 +27,7 @@ namespace FINAL_PROJECT
         int match = -1;
         string profile1;
 
-        SqlConnection sqlCon = new SqlConnection(@"Data Source=LABSCIFIPC07\LOCALHOST;Initial Catalog=TopDate;Integrated Security=True;");
+        SqlConnection sqlCon = new SqlConnection(@"Data Source=LIDY;Initial Catalog=TopDate;Integrated Security=True;");
         public Matches(int profile_ID)
         {
             InitializeComponent();
@@ -54,20 +57,27 @@ namespace FINAL_PROJECT
                 }
                 else
                 {
-                    string query2 = "SELECT Traits.ID FROM Traits LEFT JOIN Expectations ON Traits.Gender = Expectations.Gender WHERE Expectations.ID = '" + ID + "' ORDER BY NEWID()";
+                    string query2 = "SELECT Traits.ID FROM Traits JOIN Expectations ON Traits.Gender = Expectations.Gender WHERE Expectations.ID = '" + ID + "' AND NOT EXISTS (SELECT 1 FROM matches WHERE (matches.profile1 = Traits.ID AND matches.profile2 = Expectations.ID) or (matches.profile2 = Traits.ID AND matches.profile1 = Expectations.ID)) ORDER BY NEWID()";
                     SqlCommand cmd2 = new SqlCommand(query2, sqlCon);
                     profile1 = Convert.ToString(cmd2.ExecuteScalar());
 
+                    if(profile1 != "")
+                    {
+                        string query4 = $"SELECT Gender, Weight, Height, HairColor, EyeColor, BodyType FROM Traits WHERE ID = " + profile1 + "";
+                        SqlCommand cmd4 = new SqlCommand(query4, sqlCon);
 
-                    string query4 = $"SELECT Gender, Weight, Height, HairColor, EyeColor, BodyType FROM Traits WHERE ID = "+profile1+"";
-                    SqlCommand cmd4 = new SqlCommand(query4, sqlCon);
+                        SqlDataAdapter da = new SqlDataAdapter(cmd4);
+                        da.Fill(dt);
 
-                    SqlDataAdapter da = new SqlDataAdapter(cmd4);
-                    da.Fill(dt);
+                        MyDataGrid.ItemsSource = dt.DefaultView;
 
-                    MyDataGrid.ItemsSource = dt.DefaultView;
-
-                    match = 0;
+                        match = 0;
+                    }
+                    else
+                    {
+                        MessageBox.Show("No more matches!");
+                        match = -1;
+                    }
                 }
             }
 
@@ -154,6 +164,13 @@ namespace FINAL_PROJECT
 
             Matches m = new Matches(ID);
             m.Show();
+            this.Close();
+        }
+
+        private void Logout_Button_Click(object sender, RoutedEventArgs e)
+        {
+            SignUp su = new SignUp();
+            su.Show();
             this.Close();
         }
     }
