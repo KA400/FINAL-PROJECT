@@ -21,12 +21,43 @@ namespace FINAL_PROJECT
     /// </summary>
     public partial class Update : Window
     {
+        SqlConnection sqlCon = new SqlConnection(@"Data Source=LIDY;Initial Catalog=TopDate;Integrated Security=True;");
+
         public Update()
         {
             InitializeComponent();
+            try
+            {
+                sqlCon.Open();
+
+                string query = " select * from Profiles where customer_ID = " + ID;
+
+                SqlCommand cmd = new SqlCommand(query, sqlCon);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+
+                    FirstName.Text = reader["first_name"].ToString();
+                    LastName.Text = reader["last_name"].ToString();
+                    Email.Text = reader["Email"].ToString();
+                    Instagram.Text = reader["Instagram"].ToString();
+                    Password.Text = reader["Password"].ToString();
+
+                }
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show(ee.Message);
+            }
+            finally
+            {
+                sqlCon.Close();
+            }
         }
 
-        SqlConnection sqlCon = new SqlConnection(@"Data Source=LIDY;Initial Catalog=TopDate;Integrated Security=True;");
+        
 
         private void Update_Button_Click(object sender, RoutedEventArgs e)
         {
@@ -36,11 +67,11 @@ namespace FINAL_PROJECT
                 {
                     sqlCon.Open();
 
-                    string querry = "INSERT INTO Profiles(first_name, last_name, Email, Instagram, Password) values ('" + this.FirstName.Text + "' , '" + this.LastName.Text + "' , '" + this.Email.Text + "' , '" + this.Instagram.Text + "' , '" + this.Password.Password + "' )";
+                    string querry = "UPDATE Profiles SET first_name = '" + this.FirstName.Text + "' , last_name = '" + this.LastName.Text + "' , Email + '" + this.Email.Text + "' , Instagram = '" + this.Instagram.Text + "' , Password = '" + this.Password.Password + "'";
                     SqlCommand cmd = new SqlCommand(querry, sqlCon);
                     cmd.ExecuteNonQuery();
 
-                    MessageBox.Show("Successfully signed up!");
+                    MessageBox.Show("Successfully updated information up!");
                 }
 
                 catch (Exception ex)
@@ -52,8 +83,8 @@ namespace FINAL_PROJECT
                     sqlCon.Close();
                 }
 
-                LogIn li = new LogIn();
-                li.Show();
+                Matches m = new Matches();
+                m.Show();
                 this.Close();
             }
         }
@@ -100,14 +131,14 @@ namespace FINAL_PROJECT
                 sqlCon.Close();
                 return false;
             }
+            else if (Password.Password != RepeatPassword.Password)
+            {
+                MessageBox.Show("Your passwords do not match!");
+                sqlCon.Close();
+                return false;
+            }
             sqlCon.Close();
             return true;
-        }
-        private void LogIn_Button_Click(object sender, RoutedEventArgs e)
-        {
-            LogIn li = new LogIn();
-            li.Show();
-            this.Close();
         }
     }
 }

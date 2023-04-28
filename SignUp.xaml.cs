@@ -100,6 +100,12 @@ namespace FINAL_PROJECT
                 sqlCon.Close();
                 return false;
             }
+            else if (Password.Password != RepeatPassword.Password)
+            {
+                MessageBox.Show("Your passwords do not match!");
+                sqlCon.Close();
+                return false;
+            }
             sqlCon.Close();
             return true;
         }
