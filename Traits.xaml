@@ -9,10 +9,10 @@
         Title="Traits" Height="1100" Width="350" Background="#FF101010">
     <ScrollViewer>
         <Grid>
-            <Label Content="Traits" HorizontalAlignment="Center" Height="110" Margin="0,140,0,0" VerticalAlignment="Top" Width="157" Foreground="#FFB00BEE" FontSize="62" FontFamily="Source Code Pro Black" RenderTransformOrigin="0.496,0.434"/>
+            <Label Content="Traits" HorizontalAlignment="Center" Height="110" Margin="0,140,0,0" VerticalAlignment="Top" Width="234" Foreground="#FFB00BEE" FontSize="62" FontFamily="Source Code Pro Black" RenderTransformOrigin="0.496,0.434"/>
             <Label Content="Gender:" HorizontalAlignment="Left" Height="47" Margin="20,398,0,0" VerticalAlignment="Top" Width="142" Foreground="#FFB00BEE" FontSize="32" FontFamily="Source Code Pro Black"/>
-            <Label Content="Weight (kg):" HorizontalAlignment="Left" Height="54" Margin="20,455,0,0" VerticalAlignment="Top" Width="192" Foreground="#FFB00BEE" FontSize="32" FontFamily="Source Code Pro Black"/>
-            <Label Content="Height (cm):" HorizontalAlignment="Left" Height="52" Margin="20,552,0,0" VerticalAlignment="Top" Width="185" Foreground="#FFB00BEE" FontSize="32" FontFamily="Source Code Pro Black"/>
+            <Label Content="Weight (kg):" HorizontalAlignment="Left" Height="54" Margin="20,455,0,0" VerticalAlignment="Top" Width="237" Foreground="#FFB00BEE" FontSize="32" FontFamily="Source Code Pro Black"/>
+            <Label Content="Height (cm):" HorizontalAlignment="Left" Height="52" Margin="20,552,0,0" VerticalAlignment="Top" Width="237" Foreground="#FFB00BEE" FontSize="32" FontFamily="Source Code Pro Black"/>
             <Label Content="Hair Color:" HorizontalAlignment="Left" Height="47" Margin="20,655,0,0" VerticalAlignment="Top" Width="217" Foreground="#FFB00BEE" FontSize="32" FontFamily="Source Code Pro Black"/>
             <Label Content="Eye Color:" HorizontalAlignment="Left" Height="47" Margin="20,753,0,0" VerticalAlignment="Top" Width="199" Foreground="#FFB00BEE" FontSize="32" FontFamily="Source Code Pro Black"/>
             <Label Content="Body Type:" HorizontalAlignment="Left" Height="47" Margin="20,854,0,0" VerticalAlignment="Top" Width="199" Foreground="#FFB00BEE" FontSize="32" FontFamily="Source Code Pro Black"/>
@@ -45,7 +45,7 @@
             <Slider x:Name="WeightSlider" HorizontalAlignment="Left" Margin="20,514,0,0" VerticalAlignment="Top" Width="192" Minimum="40" Maximum="150" Value="60" TickFrequency="1" IsSnapToTickEnabled="True" />
             <TextBlock x:Name="WeightText" Text="{Binding ElementName=WeightSlider, Path=Value}" HorizontalAlignment="Left" Margin="228,504,0,0" VerticalAlignment="Top" Width="50" Foreground="#FFB00BEE" FontSize="32" FontFamily="Source Code Pro Black"/>
             <Slider x:Name="HeightSlider" HorizontalAlignment="Left" Margin="20,622,0,0" VerticalAlignment="Top" Width="192" Minimum="130" Maximum="230" Value="175" TickFrequency="1" IsSnapToTickEnabled="True" />
-            <TextBlock x:Name="HeightText" Text="{Binding Value, ElementName=HeightSlider}" HorizontalAlignment="Left" Margin="228,612,0,0" VerticalAlignment="Top" Width="50" Foreground="#FFB00BEE" FontSize="32" FontFamily="Source Code Pro Black"/>
+            <TextBlock x:Name="HeightText" Text="{Binding Value, ElementName=HeightSlider}" HorizontalAlignment="Left" Margin="228,612,0,0" VerticalAlignment="Top" Width="64" Foreground="#FFB00BEE" FontSize="32" FontFamily="Source Code Pro Black"/>
 
         </Grid>
     </ScrollViewer>

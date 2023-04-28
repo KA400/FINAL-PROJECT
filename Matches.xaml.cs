@@ -24,7 +24,7 @@ namespace FINAL_PROJECT
         int match = -1;
         string profile1;
 
-        SqlConnection sqlCon = new SqlConnection(@"Data Source=LAB113PC06\LOCALHOST;Initial Catalog=TopDate;Integrated Security=True;");
+        SqlConnection sqlCon = new SqlConnection(@"Data Source=LABSCIFIPC07\LOCALHOST;Initial Catalog=TopDate;Integrated Security=True;");
         public Matches(int profile_ID)
         {
             InitializeComponent();
@@ -36,15 +36,15 @@ namespace FINAL_PROJECT
                 
                 DataTable dt = new DataTable();
                 //pending matches
-                string query1 = "SELECT TOP (1) profile1 FROM Matches WHERE profile2 = '" + ID + "' and match = null";
+                string query1 = $"SELECT TOP (1) profile1 FROM Matches WHERE profile2 = '" + ID + "' and match = null";
                 SqlCommand cmd1 = new SqlCommand(query1, sqlCon);
                 profile1 = Convert.ToString(cmd1.ExecuteScalar());
 
-                if(profile1 != null)
+                if(profile1 != "")
                 {
-                    string query3 = "SELECT Gender, Weight, Height, HairColor, EyeColor, BodyType FROM Traits WHERE ID = '" + profile1 + "'";
+                    string query3 = $"SELECT Gender, Weight, Height, HairColor, EyeColor, BodyType FROM Traits WHERE ID = "+profile1+"";
                     SqlCommand cmd3 = new SqlCommand(query3, sqlCon);
-                    
+
                     SqlDataAdapter da = new SqlDataAdapter(cmd3);
                     da.Fill(dt);
 
@@ -54,12 +54,12 @@ namespace FINAL_PROJECT
                 }
                 else
                 {
-                    string query2 = "SELECT Traits.ID FROM Traits LEFT JOIN Expectations ON Traits.Gender = Expectations.Gender WHERE Expectations.ID = '" + ID + "' ORDER BY Rand() LIMIT 1";
+                    string query2 = "SELECT Traits.ID FROM Traits LEFT JOIN Expectations ON Traits.Gender = Expectations.Gender WHERE Expectations.ID = '" + ID + "' ORDER BY NEWID()";
                     SqlCommand cmd2 = new SqlCommand(query2, sqlCon);
                     profile1 = Convert.ToString(cmd2.ExecuteScalar());
 
 
-                    string query4 = "SELECT Gender, Weight, Height, HairColor, EyeColor, BodyType FROM Traits WHERE ID = '" + profile1 + "'";
+                    string query4 = $"SELECT Gender, Weight, Height, HairColor, EyeColor, BodyType FROM Traits WHERE ID = "+profile1+"";
                     SqlCommand cmd4 = new SqlCommand(query4, sqlCon);
 
                     SqlDataAdapter da = new SqlDataAdapter(cmd4);

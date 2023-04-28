@@ -25,7 +25,7 @@ namespace FINAL_PROJECT
             ID = profile_ID;
         }
 
-        SqlConnection sqlCon = new SqlConnection(@"Data Source=LIDY;Initial Catalog=TopDate;Integrated Security=True;");
+        SqlConnection sqlCon = new SqlConnection(@"Data Source=LABSCIFIPC07\LOCALHOST;Initial Catalog=TopDate;Integrated Security=True;");
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
